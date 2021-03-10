@@ -31,14 +31,17 @@ public class RunStatechart {
 			case "exit":
 				exit = true;
 				break;
-			case "black":
-				s.raiseBlack();
+			case "start":
+				s.raiseStart();
 				break;
 			case "white":
 				s.raiseWhite();
 				break;
-			case "start":
-				s.raiseStart();
+			case "black":
+				s.raiseBlack();
+				break;
+			case "newevent":
+				s.raiseNewEvent();
 				break;
 			default:
 				System.out.println("Unrecognized command: " + input);
@@ -53,5 +56,7 @@ public class RunStatechart {
 	public static void print(IExampleStatemachine s) {
 		System.out.println("W = " + s.getSCInterface().getWhiteTime());
 		System.out.println("B = " + s.getSCInterface().getBlackTime());
+		System.out.println("N = " + s.getSCInterface().getNewVariable());
 	}
 }
+
